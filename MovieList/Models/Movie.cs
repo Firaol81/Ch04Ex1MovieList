@@ -5,19 +5,25 @@ namespace MovieList.Models
 {
     public class Movie
     {
+        // EF will instruct the database to automatically generate this value
         public int MovieId { get; set; }
 
-        [Required(ErrorMessage = "The movie name is required.")]
+        [Required(ErrorMessage = "Please enter a name.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "The release year is required.")]
-        [Range(1900, 2100, ErrorMessage = "Please enter a valid release year.")]
-        public int Year { get; set; }
+        [Required(ErrorMessage = "Please enter a year.")]
+        [Range(1889, 2050, ErrorMessage = "Year must be between 1889 and now.")]
+        public int? Year { get; set; }
 
-        [Required(ErrorMessage = "The rating is required.")]
-        [Range(1, 5, ErrorMessage = "The rating must be between 1 and 5.")]
-        public int Rating { get; set; }
+        [Required(ErrorMessage = "Please enter a rating.")]
+        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
+        public int? Rating { get; set; }
 
-        // You can add more properties as needed, such as GenreId, Director, Description, etc.
+        [Required(ErrorMessage = "Please enter a genre.")]
+        public string GenreId { get; set; }
+        public Genre Genre { get; set; }
+
+        public string Slug =>
+            Name?.Replace(' ', '-').ToLower() + '-' + Year?.ToString();
     }
 }
