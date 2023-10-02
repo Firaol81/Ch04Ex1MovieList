@@ -4,6 +4,10 @@ namespace MovieList.Models
 {
     public class MovieContext : DbContext
     {
+       public MovieContext()
+        {
+
+        }
         public MovieContext(DbContextOptions<MovieContext> options)
             : base(options)
         { }
