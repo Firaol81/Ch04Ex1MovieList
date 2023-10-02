@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migration;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MovieList
+
+namespace MovieList.Migrations
 {
-    public partial class Initial : Migrations
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

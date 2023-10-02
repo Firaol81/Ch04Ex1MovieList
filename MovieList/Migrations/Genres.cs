@@ -2,7 +2,7 @@
 
 namespace MovieList.Migrations
 {
-    public partial class Genre : Migration
+    public partial class Genres : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -90,5 +90,9 @@ namespace MovieList.Migrations
                 name: "GenreId",
                 table: "Movies");
         }
+    }
+
+    public class Migration
+    {
     }
 }
